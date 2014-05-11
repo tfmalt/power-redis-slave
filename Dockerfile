@@ -13,9 +13,10 @@ RUN mkdir -p /var/log/supervisor
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD redis.conf /etc/redis/redis.conf
 ADD stunnel/redis-client.conf /etc/stunnel/redis-client.conf
+ADD stunnel/private.pem /etc/stunnel/private.pem
 ADD stunnel-default /etc/default/stunnel4
 
-EXPOSE 6379
+EXPOSE 6380
 
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
