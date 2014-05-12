@@ -14,7 +14,6 @@ ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD redis.conf /etc/redis/redis.conf
 ADD stunnel/redis-client.conf /etc/stunnel/redis-client.conf
 ADD stunnel/private.pem /etc/stunnel/private.pem
-ADD stunnel-default /etc/default/stunnel4
 
 EXPOSE 6380
 
