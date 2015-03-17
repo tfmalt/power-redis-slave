@@ -4,7 +4,8 @@ MAINTAINER Thomas Malt  <thomas@malt.no>
 RUN apt-get update
 RUN apt-get -y upgrade
 
-RUN apt-get install -y redis-server stunnel4 supervisor python-pip 
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    redis-server stunnel4 supervisor python-pip 
 RUN pip install supervisor-stdout
 
 RUN mkdir -p /var/log/supervisor
